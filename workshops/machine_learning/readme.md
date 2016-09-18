@@ -108,7 +108,7 @@ fn download(url: &str) -> Vec<u8> {
 
 We download a resource by its URL and return an array of bytes (a `Vec<u8>>`). In order to start writing the body of the function, we need to impor the `hyper` dependency. We do this by putting `extern crate hyper;` at the top of `main.rs`. This imports the `hyper` module into the scope of our project.
 
-Looking at the GET example in the `hyper` [documentation](http://hyper.rs/hyper/v0.9.10/hyper/client/index.html#get), we should be able to write somthing along the lines of
+Looking at the GET example in the `hyper` [documentation](http://hyper.rs/hyper/v0.9.10/hyper/client/index.html#get), after we import the client module via `use hyper::client:Client` in the top of the file, we should be able to write somthing along the lines of
 ```rust
 let client = Client::new();
 let mut response = client.get(url).send().unwrap();
